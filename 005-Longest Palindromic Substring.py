@@ -34,19 +34,23 @@ class Solution(object):
         i = 0
         while i < size:
             j = i + 1
+            #把相同的部分捆绑一块
             while j < size:
                 if s[i] == s[j]:
                     j += 1
                 else:
                     break
+            #k用来记录左右两边相同的长度
             k = 0
             while i - k - 1 >= 0 and j + k<= size - 1:
                 if s[i- k - 1] != s[j + k]:
                     break
                 k += 1
+            #跟以前的比较长度，题目要求的是最长的回文字符串
             if j - i + 2*k > maxp:
                 maxp = j- i + 2*k
                 ans = s[i - k:j + k]
+            #判断是否已经判断到底了
             if j + k == size - 1:
                 break
             i = j
