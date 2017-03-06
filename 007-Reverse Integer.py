@@ -8,7 +8,7 @@ class Solution(object):
         if x ==0:
             return 0
         digits=[]
-        sign=1啊
+        sign=1
         if x < 0:
             sign=-1
         
